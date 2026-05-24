@@ -20,7 +20,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'APPOLOC Website <website@appoloc.com>',
+        from: 'APPOLOC Konfigurator <konfigurator@appoloc.com>',
         to: ['click@appoloc.com'],
         reply_to: email,
         subject: `Neue Anfrage von ${name}`,
