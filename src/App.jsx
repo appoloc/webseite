@@ -6,7 +6,7 @@ const T = {
     hero: {
       tag: 'Modulare Wandsysteme',
       title: 'Klick dir deine Wand.',
-      sub: 'Massive Eiche. Runde Module. Ein Bajonettverschluss. Heute Magnet, morgen Moos — geht in Sekunden, hält Jahrzehnte.',
+      sub: '',
       cta: 'Jetzt konfigurieren',
     },
     about: {
@@ -36,6 +36,13 @@ const T = {
       p1: 'Raumschilder, QR-Codes, Logos — lasergraviert auf Eiche oder Aluminium. Jede App passt ins APPOLOC-System und lässt sich jederzeit tauschen.',
       p2: 'Alle Business Apps sind individuell anpassbar: eigener Text, eigenes Logo, eigenes Piktogramm. Komplette Raumkonzepte für Praxen, Büros und Studios? Sprich uns an.',
       cta: 'Anfrage starten',
+    },
+    bizDisplay: {
+      tag: 'Smart App · Business',
+      title: 'Dein Raum spricht für sich.',
+      sub: 'Videos. Infos. Begrüßung. Ein Display — eingebettet in dein Board.',
+      p1: 'Im Wartezimmer zeigt es Behandlungsvideos. In der Hotellobby begrüßt es Gäste. In der Kanzlei zeigt es den Tagesplan. Inhalte steuerst du bequem vom PC.',
+      cta: 'Jetzt anfragen',
     },
     maker: {
       tag: 'Die Manufaktur',
@@ -67,7 +74,7 @@ const T = {
     hero: {
       tag: 'Modular Wall Systems',
       title: 'Click your wall.',
-      sub: 'Solid oak. Round modules. One bayonet lock. Today a magnet, tomorrow moss — takes seconds, lasts decades.',
+      sub: '',
       cta: 'Configure now',
     },
     about: {
@@ -97,6 +104,13 @@ const T = {
       p1: 'Room signs, QR codes, logos — laser-engraved on oak or aluminium. Every app fits the APPOLOC system and can be swapped anytime.',
       p2: 'All Business Apps are fully customisable: your own text, logo or pictogram. Complete room concepts for practices, offices and studios? Get in touch.',
       cta: 'Start inquiry',
+    },
+    bizDisplay: {
+      tag: 'Smart App · Business',
+      title: 'Your room speaks for itself.',
+      sub: 'Videos. Info. Welcome. A display — embedded in your board.',
+      p1: 'In the waiting room it shows treatment videos. In the hotel lobby it greets guests. In the law firm it shows the daily schedule. Manage content from your PC.',
+      cta: 'Inquire now',
     },
     maker: {
       tag: 'The Workshop',
@@ -129,16 +143,7 @@ const KONFIGURATOR_URL = 'https://appoloc-konfigurator.vercel.app';
 
 function Logo() {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-      <svg width="44" height="18" viewBox="0 0 44 18">
-        <circle cx="9" cy="9" r="6" fill="none" stroke="#111" strokeWidth="1.8" />
-        <circle cx="22" cy="9" r="7" fill="#111" />
-        <circle cx="35" cy="9" r="6" fill="none" stroke="#111" strokeWidth="1.8" />
-      </svg>
-      <span style={{ fontFamily: "'DM Sans'", fontSize: 18, fontWeight: 400, letterSpacing: '0.04em', color: '#111' }}>
-        appoloc
-      </span>
-    </div>
+    <img src="/images/logo.png" alt="appoloc" style={{ height: 36 }} />
   );
 }
 
@@ -166,18 +171,18 @@ export default function App() {
   }
 
   const sectionStyle = { maxWidth: 1200, margin: '0 auto', padding: '120px 32px' };
-  const tagStyle = { fontFamily: "'DM Sans'", fontSize: 11, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#9a9590', fontWeight: 500, marginBottom: 16 };
-  const h2Style = { fontFamily: "'Playfair Display'", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 500, color: '#1a1714', lineHeight: 1.15, margin: '0 0 16px' };
-  const pStyle = { fontFamily: "'DM Sans'", fontSize: 16, color: '#5a5550', lineHeight: 1.7, margin: '0 0 16px', fontWeight: 300 };
+  const tagStyle = { fontFamily: "'Montserrat'", fontSize: 11, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#9a9590', fontWeight: 500, marginBottom: 16 };
+  const h2Style = { fontFamily: "'Montserrat'", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 500, color: '#1a1714', lineHeight: 1.15, margin: '0 0 16px' };
+  const pStyle = { fontFamily: "'Montserrat'", fontSize: 16, color: '#5a5550', lineHeight: 1.7, margin: '0 0 16px', fontWeight: 300 };
   const btnStyle = {
-    display: 'inline-block', fontFamily: "'DM Sans'", fontSize: 14, fontWeight: 500,
+    display: 'inline-block', fontFamily: "'Montserrat'", fontSize: 14, fontWeight: 500,
     color: '#f5f0e8', background: '#1a1714', padding: '14px 36px', borderRadius: 50,
     textDecoration: 'none', letterSpacing: '0.02em', border: 'none', cursor: 'pointer',
     transition: 'opacity 0.2s',
   };
 
   return (
-    <div style={{ fontFamily: "'DM Sans', sans-serif", color: '#1a1714', background: '#faf9f7', overflowX: 'hidden' }}>
+    <div style={{ fontFamily: "'Montserrat', sans-serif", color: '#1a1714', background: '#faf9f7', overflowX: 'hidden' }}>
 
       {/* NAV */}
       <nav style={{
@@ -188,16 +193,16 @@ export default function App() {
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '14px 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Logo />
           <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
-            <a href={KONFIGURATOR_URL} target="_blank" rel="noreferrer" style={{ fontFamily: "'DM Sans'", fontSize: 13, color: '#1a1714', textDecoration: 'none', fontWeight: 500 }}>
+            <a href={KONFIGURATOR_URL} target="_blank" rel="noreferrer" style={{ fontFamily: "'Montserrat'", fontSize: 13, color: '#1a1714', textDecoration: 'none', fontWeight: 500 }}>
               {t.nav.configure}
             </a>
-            <a href="#kontakt" style={{ fontFamily: "'DM Sans'", fontSize: 13, color: '#1a1714', textDecoration: 'none', fontWeight: 500 }}>
+            <a href="#kontakt" style={{ fontFamily: "'Montserrat'", fontSize: 13, color: '#1a1714', textDecoration: 'none', fontWeight: 500 }}>
               {t.nav.contact}
             </a>
             <div style={{ display: 'flex', gap: 2, marginLeft: 8 }}>
               {['de', 'en'].map(l => (
                 <button key={l} onClick={() => setLang(l)} style={{
-                  padding: '3px 8px', fontSize: 11, fontFamily: "'DM Sans'", fontWeight: lang === l ? 600 : 400,
+                  padding: '3px 8px', fontSize: 11, fontFamily: "'Montserrat'", fontWeight: lang === l ? 600 : 400,
                   color: lang === l ? '#1a1714' : '#aaa', background: lang === l ? '#ece8e1' : 'transparent',
                   border: 'none', borderRadius: 4, cursor: 'pointer', textTransform: 'uppercase',
                 }}>{l}</button>
@@ -217,14 +222,12 @@ export default function App() {
             padding: '120px 32px 60px',
           }}>
             <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-              <div style={{ ...tagStyle, color: '#c9a96e' }}>{t.hero.tag}</div>
-              <h1 style={{ fontFamily: "'Playfair Display'", fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 500, color: '#fff', lineHeight: 1.1, margin: '0 0 16px' }}>
+              <div style={{ ...tagStyle, color: '#d4c4a8' }}>{t.hero.tag}</div>
+              <h1 style={{ fontFamily: "'Montserrat'", fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 500, color: '#fff', lineHeight: 1.1, margin: '0 0 16px' }}>
                 {t.hero.title}
               </h1>
-              <p style={{ fontFamily: "'DM Sans'", fontSize: 17, color: 'rgba(255,255,255,0.8)', maxWidth: 520, lineHeight: 1.6, margin: '0 0 32px', fontWeight: 300 }}>
-                {t.hero.sub}
-              </p>
-              <a href={KONFIGURATOR_URL} target="_blank" rel="noreferrer" style={{ ...btnStyle, background: '#c9a96e', color: '#1a1714' }}>
+              <div style={{ marginBottom: 32 }}></div>
+              <a href={KONFIGURATOR_URL} target="_blank" rel="noreferrer" style={{ ...btnStyle, background: '#1a1714', color: '#f5f0e8' }}>
                 {t.hero.cta} →
               </a>
             </div>
@@ -239,7 +242,7 @@ export default function App() {
           <div>
             <div style={tagStyle}>{t.about.tag}</div>
             <h2 style={h2Style}>{t.about.title}</h2>
-            <p style={{ fontFamily: "'Playfair Display'", fontSize: 20, color: '#5a5550', fontStyle: 'italic', lineHeight: 1.5, margin: '0 0 24px' }}>
+            <p style={{ fontFamily: "'Montserrat'", fontSize: 20, color: '#5a5550', fontStyle: 'italic', lineHeight: 1.5, margin: '0 0 24px' }}>
               {t.about.sub}
             </p>
             <p style={pStyle}>{t.about.p1}</p>
@@ -267,7 +270,7 @@ export default function App() {
                   background: 'linear-gradient(transparent, rgba(0,0,0,0.6))',
                   padding: '40px 20px 16px',
                 }}>
-                  <span style={{ fontFamily: "'DM Sans'", fontSize: 14, color: '#fff', fontWeight: 500 }}>{s.label}</span>
+                  <span style={{ fontFamily: "'Montserrat'", fontSize: 14, color: '#fff', fontWeight: 500 }}>{s.label}</span>
                 </div>
               </div>
             ))}
@@ -275,27 +278,21 @@ export default function App() {
         </div>
       </section>
 
-      {/* SHOWCASE — SOULIO + Kitchen */}
-      <section style={sectionStyle}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-          <img src="/images/soulio.jpg" alt="SOULIO Apps — Present, Grow, Enough" style={{ width: '100%', borderRadius: 8 }} />
-          <img src="/images/kitchen-full.jpg" alt="APPOLOC in der Küche" style={{ width: '100%', borderRadius: 8 }} />
-        </div>
-      </section>
+
 
       {/* SMART APP */}
       <section style={{ background: '#1a1714', color: '#fff' }}>
         <div style={{ ...sectionStyle, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 64, alignItems: 'center' }}>
           <img src="/images/smart.jpg" alt="APPOLOC Smart App im Flur" style={{ width: '100%', borderRadius: 8 }} />
           <div>
-            <div style={{ ...tagStyle, color: '#c9a96e' }}>{t.smart.tag}</div>
+            <div style={{ ...tagStyle, color: '#d4c4a8' }}>{t.smart.tag}</div>
             <h2 style={{ ...h2Style, color: '#f5f0e8' }}>{t.smart.title}</h2>
-            <p style={{ fontFamily: "'Playfair Display'", fontSize: 18, color: '#b8a88a', fontStyle: 'italic', lineHeight: 1.5, margin: '0 0 24px' }}>
+            <p style={{ fontFamily: "'Montserrat'", fontSize: 18, color: '#b8a88a', fontStyle: 'italic', lineHeight: 1.5, margin: '0 0 24px' }}>
               {t.smart.sub}
             </p>
             <p style={{ ...pStyle, color: '#a09890' }}>{t.smart.p1}</p>
             <p style={{ ...pStyle, color: '#a09890' }}>{t.smart.p2}</p>
-            <a href="#kontakt" style={{ ...btnStyle, background: '#c9a96e', color: '#1a1714' }}>{t.smart.cta} →</a>
+            <a href="#kontakt" style={{ ...btnStyle, background: '#fff', color: '#1a1714' }}>{t.smart.cta} →</a>
           </div>
         </div>
       </section>
@@ -314,15 +311,31 @@ export default function App() {
         </div>
       </section>
 
+      {/* BUSINESS DISPLAY */}
+      <section style={{ background: '#1a1714', color: '#fff' }}>
+        <div style={{ ...sectionStyle, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 64, alignItems: 'center' }}>
+          <img src="/images/biz-display.jpg" alt="APPOLOC Smart App im Wartezimmer mit Behandlungsvideo" style={{ width: '100%', borderRadius: 8 }} />
+          <div>
+            <div style={{ ...tagStyle, color: '#d4c4a8' }}>{t.bizDisplay.tag}</div>
+            <h2 style={{ ...h2Style, color: '#f5f0e8' }}>{t.bizDisplay.title}</h2>
+            <p style={{ fontFamily: "'Montserrat'", fontSize: 18, color: '#b8a88a', fontStyle: 'italic', lineHeight: 1.5, margin: '0 0 24px' }}>
+              {t.bizDisplay.sub}
+            </p>
+            <p style={{ ...pStyle, color: '#a09890' }}>{t.bizDisplay.p1}</p>
+            <a href="#kontakt" style={{ ...btnStyle, background: '#fff', color: '#1a1714' }}>{t.bizDisplay.cta} →</a>
+          </div>
+        </div>
+      </section>
+
       {/* MAKER */}
       <section style={{ background: '#1a1714', color: '#f5f0e8' }}>
         <div style={{ ...sectionStyle, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 64, alignItems: 'center' }}>
           <div>
-            <div style={{ ...tagStyle, color: '#c9a96e' }}>{t.maker.tag}</div>
+            <div style={{ ...tagStyle, color: '#d4c4a8' }}>{t.maker.tag}</div>
             <h2 style={{ ...h2Style, color: '#f5f0e8' }}>{t.maker.title}</h2>
             <p style={{ ...pStyle, color: '#a09890' }}>{t.maker.p1}</p>
             <p style={{ ...pStyle, color: '#a09890' }}>{t.maker.p2}</p>
-            <p style={{ fontFamily: "'DM Sans'", fontSize: 14, color: '#c9a96e', fontWeight: 500, letterSpacing: '0.1em', marginTop: 24 }}>
+            <p style={{ fontFamily: "'Montserrat'", fontSize: 14, color: '#999', fontWeight: 500, letterSpacing: '0.1em', marginTop: 24 }}>
               {t.maker.p3}
             </p>
           </div>
@@ -338,7 +351,7 @@ export default function App() {
           <p style={pStyle}>{t.contact.sub}</p>
         </div>
         {sent ? (
-          <p style={{ textAlign: 'center', fontFamily: "'DM Sans'", fontSize: 16, color: '#1a7a3a', fontWeight: 500 }}>
+          <p style={{ textAlign: 'center', fontFamily: "'Montserrat'", fontSize: 16, color: '#1a7a3a', fontWeight: 500 }}>
             ✓ {t.contact.sent}
           </p>
         ) : (
@@ -346,21 +359,21 @@ export default function App() {
             <input required value={reqName} onChange={e => setReqName(e.target.value)}
               placeholder={t.contact.name}
               style={{
-                fontFamily: "'DM Sans'", fontSize: 15, padding: '14px 18px',
+                fontFamily: "'Montserrat'", fontSize: 15, padding: '14px 18px',
                 border: '1px solid #ddd', borderRadius: 8, outline: 'none', background: '#fff',
               }}
             />
             <input required type="email" value={reqEmail} onChange={e => setReqEmail(e.target.value)}
               placeholder={t.contact.email}
               style={{
-                fontFamily: "'DM Sans'", fontSize: 15, padding: '14px 18px',
+                fontFamily: "'Montserrat'", fontSize: 15, padding: '14px 18px',
                 border: '1px solid #ddd', borderRadius: 8, outline: 'none', background: '#fff',
               }}
             />
             <textarea value={reqMsg} onChange={e => setReqMsg(e.target.value)}
               placeholder={t.contact.message} rows={5}
               style={{
-                fontFamily: "'DM Sans'", fontSize: 15, padding: '14px 18px',
+                fontFamily: "'Montserrat'", fontSize: 15, padding: '14px 18px',
                 border: '1px solid #ddd', borderRadius: 8, outline: 'none', background: '#fff', resize: 'vertical',
               }}
             />
@@ -377,13 +390,13 @@ export default function App() {
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
           <Logo />
           <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
-            <a href={KONFIGURATOR_URL} target="_blank" rel="noreferrer" style={{ fontFamily: "'DM Sans'", fontSize: 13, color: '#5a5550', textDecoration: 'none' }}>
+            <a href={KONFIGURATOR_URL} target="_blank" rel="noreferrer" style={{ fontFamily: "'Montserrat'", fontSize: 13, color: '#5a5550', textDecoration: 'none' }}>
               {t.footer.conf}
             </a>
-            <a href="#" style={{ fontFamily: "'DM Sans'", fontSize: 13, color: '#5a5550', textDecoration: 'none' }}>{t.footer.imprint}</a>
-            <a href="#" style={{ fontFamily: "'DM Sans'", fontSize: 13, color: '#5a5550', textDecoration: 'none' }}>{t.footer.privacy}</a>
+            <a href="#" style={{ fontFamily: "'Montserrat'", fontSize: 13, color: '#5a5550', textDecoration: 'none' }}>{t.footer.imprint}</a>
+            <a href="#" style={{ fontFamily: "'Montserrat'", fontSize: 13, color: '#5a5550', textDecoration: 'none' }}>{t.footer.privacy}</a>
           </div>
-          <p style={{ fontFamily: "'DM Sans'", fontSize: 12, color: '#aaa' }}>© 2026 APPOLOC. {t.footer.rights}</p>
+          <p style={{ fontFamily: "'Montserrat'", fontSize: 12, color: '#aaa' }}>© 2026 APPOLOC. {t.footer.rights}</p>
         </div>
       </footer>
 
