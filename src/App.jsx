@@ -214,8 +214,8 @@ export default function App() {
 
       {/* HERO */}
       <section style={{ paddingTop: 70 }}>
-        <div style={{ position: 'relative', width: '100%', height: 'clamp(450px, 50vw, 750px)', overflow: 'hidden' }}>
-          <img src="/images/hero.jpg" alt="APPOLOC Wandboard im Flur" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center' }} />
+        <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+          <img src="/images/hero.jpg" alt="APPOLOC Wandboard im Flur" style={{ width: '100%', display: 'block' }} />
           <div style={{
             position: 'absolute', bottom: 0, left: 0, right: 0,
             background: 'linear-gradient(transparent, rgba(26,23,20,0.85))',
