@@ -214,19 +214,22 @@ export default function App() {
 
       {/* HERO */}
       <section style={{ paddingTop: 70 }}>
-        <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
-          <img src="/images/hero.jpg" alt="APPOLOC Wandboard im Flur" style={{ width: '100%', display: 'block' }} />
+        <div style={{ position: 'relative', width: '100%', minHeight: '70vh', overflow: 'hidden' }}>
+          <img src="/images/hero.jpg" alt="APPOLOC Wandboard im Flur" style={{
+            width: '100%', height: '100%', position: 'absolute', top: 0, left: 0,
+            objectFit: 'cover', objectPosition: 'center center',
+          }} />
           <div style={{
             position: 'absolute', bottom: 0, left: 0, right: 0,
             background: 'linear-gradient(transparent, rgba(26,23,20,0.85))',
-            padding: '120px 32px 60px',
+            padding: '120px 24px 48px',
           }}>
             <div style={{ maxWidth: 1200, margin: '0 auto' }}>
               <div style={{ ...tagStyle, color: '#d4c4a8' }}>{t.hero.tag}</div>
-              <h1 style={{ fontFamily: "'Montserrat'", fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 500, color: '#fff', lineHeight: 1.1, margin: '0 0 16px' }}>
+              <h1 style={{ fontFamily: "'Montserrat'", fontSize: 'clamp(32px, 5vw, 64px)', fontWeight: 500, color: '#fff', lineHeight: 1.1, margin: '0 0 16px' }}>
                 {t.hero.title}
               </h1>
-              <div style={{ marginBottom: 32 }}></div>
+              <div style={{ marginBottom: 24 }}></div>
               <a href={KONFIGURATOR_URL} target="_blank" rel="noreferrer" style={{ ...btnStyle, background: '#1a1714', color: '#f5f0e8' }}>
                 {t.hero.cta} →
               </a>
@@ -237,7 +240,7 @@ export default function App() {
 
       {/* ABOUT */}
       <section style={sectionStyle}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 64, alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 64, alignItems: 'center' }}>
           <img src="/images/product.jpg" alt="APPOLOC Board mit Spiegel, Moos und Leder" style={{ width: '100%', borderRadius: 8 }} />
           <div>
             <div style={tagStyle}>{t.about.tag}</div>
@@ -282,7 +285,7 @@ export default function App() {
 
       {/* SMART APP */}
       <section style={{ background: '#1a1714', color: '#fff' }}>
-        <div style={{ ...sectionStyle, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 64, alignItems: 'center' }}>
+        <div style={{ ...sectionStyle, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 64, alignItems: 'center' }}>
           <img src="/images/smart.jpg" alt="APPOLOC Smart App im Flur" style={{ width: '100%', borderRadius: 8 }} />
           <div>
             <div style={{ ...tagStyle, color: '#d4c4a8' }}>{t.smart.tag}</div>
@@ -299,7 +302,7 @@ export default function App() {
 
       {/* BUSINESS */}
       <section style={sectionStyle}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 64, alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 64, alignItems: 'center' }}>
           <img src="/images/business.jpg" alt="APPOLOC Business — Zahnarztpraxis Empfang" style={{ width: '100%', borderRadius: 8 }} />
           <div>
             <div style={tagStyle}>{t.business.tag}</div>
@@ -313,7 +316,7 @@ export default function App() {
 
       {/* BUSINESS DISPLAY */}
       <section style={{ background: '#1a1714', color: '#fff' }}>
-        <div style={{ ...sectionStyle, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 64, alignItems: 'center' }}>
+        <div style={{ ...sectionStyle, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 64, alignItems: 'center' }}>
           <img src="/images/biz-display.jpg" alt="APPOLOC Smart App im Wartezimmer mit Behandlungsvideo" style={{ width: '100%', borderRadius: 8 }} />
           <div>
             <div style={{ ...tagStyle, color: '#d4c4a8' }}>{t.bizDisplay.tag}</div>
@@ -412,8 +415,11 @@ export default function App() {
           section > div { grid-template-columns: 1fr !important; }
         }
         @media (max-width: 700px) {
-          section[style*="grid-template-columns: repeat(3"] > div,
-          div[style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+          section > div,
+          div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          section { padding-left: 16px !important; padding-right: 16px !important; }
         }
       `}</style>
     </div>
