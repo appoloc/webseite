@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 const T = {
   de: {
@@ -422,6 +423,7 @@ export default function App() {
           section { padding-left: 16px !important; padding-right: 16px !important; }
         }
       `}</style>
+      <Analytics />
     </div>
   );
 }
