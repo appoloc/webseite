@@ -143,7 +143,7 @@ const KONFIGURATOR_URL = 'https://appoloc-konfigurator.vercel.app';
 
 function Logo() {
   return (
-    <img src="/images/logo.png" alt="appoloc" style={{ height: 36 }} />
+    <img src="/images/logo.png" alt="appoloc" style={{ height: 48 }} />
   );
 }
 
