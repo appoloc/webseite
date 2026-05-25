@@ -1,6 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/ar-models/(.*)", "destination": "/ar-models/$1" },
-    { "source": "/((?!api|ar-models|images).*)", "destination": "/index.html" }
-  ]
-}
