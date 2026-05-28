@@ -539,9 +539,9 @@ export default function App() {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
           {[
-            { img: IMG.bizPraxis, cat: t.bizWhere.cats[0] },     // Medizin → helle Praxis-Empfang (Smile Design)
-            { img: IMG.bizWellness, cat: t.bizWhere.cats[1] },   // Wellness → Pure Balance Spa (Moos, Travertin)
-            { img: IMG.bizReception, cat: t.bizWhere.cats[2] },  // Business-Interior → Lumière oder ähnlich
+            { img: IMG.bizPraxis, cat: t.bizWhere.cats[0] },     // Medizin → Grow Dental Wartezimmer
+            { img: IMG.bizWellness, cat: t.bizWhere.cats[1] },   // Wellness → Pure Balance Spa
+            { img: IMG.bizReception, cat: t.bizWhere.cats[2] },  // Kleine Business-Interiors → Kanzlei Martin Keller
           ].map((c, i) => (
             <div key={i}>
               <div style={{ aspectRatio: '4/3', borderRadius: 8, overflow: 'hidden', marginBottom: 20 }}>
