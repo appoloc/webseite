@@ -578,33 +578,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* BIZ SETS */}
-      <section style={sectionStyle}>
-        <div style={{ maxWidth: 720, marginBottom: 56 }}>
-          <div style={tagStyle}>{t.bizSets.tag}</div>
-          <h2 style={h2Style}>{t.bizSets.title}</h2>
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
-          {t.bizSets.sets.map((s, i) => {
-            const setImages = [IMG.bizHotel, IMG.bizAurum, IMG.bizWellness]; // Welcome / Patient Flow / Wellness
-            return (
-              <div key={i} style={{ background: colors.paper, border: `1px solid ${colors.line}`, borderRadius: 12, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ aspectRatio: '5/3', overflow: 'hidden', background: colors.paperWarm }}>
-                  <img src={setImages[i]} alt={s.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <div style={{ padding: 28, display: 'flex', flexDirection: 'column', gap: 14, flex: 1 }}>
-                  <h3 style={{ fontFamily: "'Montserrat'", fontSize: 22, fontWeight: 500, color: colors.ink, margin: 0 }}>{s.name}</h3>
-                  <p style={{ ...pStyle, margin: 0, fontStyle: 'italic' }}>{s.for}</p>
-                  <p style={{ fontFamily: "'Montserrat'", fontSize: 14, color: colors.inkSoft, lineHeight: 1.65, margin: 0, fontWeight: 300 }}>{s.items}</p>
-                  <div style={{ fontFamily: "'Montserrat'", fontSize: 12, color: colors.mute, marginTop: 'auto' }}>{s.target}</div>
-                  <a href="#kontakt" style={{ ...btnStyle, alignSelf: 'flex-start', marginTop: 8 }}>{s.cta} →</a>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
       {/* ================ MATERIAL ================ */}
       <div id="material" />
       <section style={{ background: colors.ink, color: '#f5f0e8' }}>
