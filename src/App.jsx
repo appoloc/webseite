@@ -294,6 +294,8 @@ const IMG = {
   portrait:     '/images/portrait.jpg',      // Lupos Portrait bestehend
 
   // === NEUE BUSINESS-BILDER (Renderings aus deinen Uploads) ===
+  heroBusiness: '/images/hero-business.jpg',// Hero-Karte Business: Aurum Dental Empfang (3 Boards)
+  heroHome:     '/images/hero-home.jpg',    // Hero-Karte Home: Küche mit Kräuter-Apps, Uhr, Moos
   heroStand:    '/images/hero-stand.jpg',    // Hero Stand-Treppenhaus (vertikal, freistehend, Beton+Treppe)
   bizHamilton:  '/images/biz-hamilton.jpg',  // Hamilton & Reeve (dunkel, drei Boards, Anwaltskanzlei)
   bizReception: '/images/biz-reception.jpg', // Lumière Aesthetic Medicine (Bronze-Tresen, dunkel)
@@ -429,32 +431,26 @@ export default function App() {
             <p style={{ ...pStyle, fontSize: 18, maxWidth: 680, margin: '0 auto' }}>{t.hero.sub}</p>
           </div>
 
-          {/* Zwei Auswahlkarten — mit Hintergrundbildern */}
+          {/* Zwei Auswahlkarten — Bild oben, Text unten */}
           <div className="hero-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, maxWidth: 1080, margin: '0 auto' }}>
-            {/* Business card mit Hamilton & Reeve im Hintergrund */}
+            {/* Business card */}
             <a href="#business" style={{
-              position: 'relative', display: 'block', textDecoration: 'none',
-              background: colors.ink, color: '#f5f0e8', padding: 0, borderRadius: 12,
-              overflow: 'hidden', minHeight: 360,
+              display: 'flex', flexDirection: 'column', textDecoration: 'none',
+              background: colors.ink, borderRadius: 12, overflow: 'hidden',
               transition: 'transform 0.25s, box-shadow 0.25s',
             }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.22)'; }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}
             >
-              <img src={IMG.bizHamilton} alt="" style={{
-                position: 'absolute', inset: 0, width: '100%', height: '100%',
-                objectFit: 'cover', opacity: 0.6,
-              }} />
-              <div style={{
-                position: 'absolute', inset: 0,
-                background: 'linear-gradient(180deg, rgba(26,23,20,0.55) 0%, rgba(26,23,20,0.92) 100%)',
-              }} />
-              <div style={{ position: 'relative', padding: 40 }}>
+              <div style={{ aspectRatio: '16/10', overflow: 'hidden' }}>
+                <img src={IMG.heroBusiness} alt="APPOLOC Business — Praxisempfang mit Boards" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div style={{ padding: 36 }}>
                 <div style={{ ...tagStyle, color: colors.accent, marginBottom: 12 }}>{t.hero.cardBiz.tag}</div>
                 <h3 style={{ fontFamily: "'Montserrat'", fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 500, color: '#f5f0e8', margin: '0 0 14px', lineHeight: 1.2 }}>
                   {t.hero.cardBiz.title}
                 </h3>
-                <p style={{ fontFamily: "'Montserrat'", fontSize: 15, color: '#d4c4a8', lineHeight: 1.65, margin: '0 0 24px', fontWeight: 300 }}>
+                <p style={{ fontFamily: "'Montserrat'", fontSize: 15, color: '#a09890', lineHeight: 1.65, margin: '0 0 24px', fontWeight: 300 }}>
                   {t.hero.cardBiz.text}
                 </p>
                 <span style={{ fontFamily: "'Montserrat'", fontSize: 14, fontWeight: 500, color: '#f5f0e8', letterSpacing: '0.02em' }}>
@@ -463,25 +459,19 @@ export default function App() {
               </div>
             </a>
 
-            {/* Home card mit Northridge/Produkt im Hintergrund */}
+            {/* Home card */}
             <a href="#home" style={{
-              position: 'relative', display: 'block', textDecoration: 'none', color: 'inherit',
-              background: colors.paperWarm, padding: 0, borderRadius: 12,
-              overflow: 'hidden', minHeight: 360,
+              display: 'flex', flexDirection: 'column', textDecoration: 'none',
+              background: colors.paperWarm, borderRadius: 12, overflow: 'hidden',
               transition: 'transform 0.25s, box-shadow 0.25s',
             }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.12)'; }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}
             >
-              <img src={IMG.bizNorthridge} alt="" style={{
-                position: 'absolute', inset: 0, width: '100%', height: '100%',
-                objectFit: 'cover', opacity: 0.55,
-              }} />
-              <div style={{
-                position: 'absolute', inset: 0,
-                background: 'linear-gradient(180deg, rgba(240,236,230,0.4) 0%, rgba(240,236,230,0.94) 100%)',
-              }} />
-              <div style={{ position: 'relative', padding: 40 }}>
+              <div style={{ aspectRatio: '16/10', overflow: 'hidden' }}>
+                <img src={IMG.heroHome} alt="APPOLOC Home — Küche mit Kräuter- und Funktions-Apps" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div style={{ padding: 36 }}>
                 <div style={tagStyle}>{t.hero.cardHome.tag}</div>
                 <h3 style={{ fontFamily: "'Montserrat'", fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 500, color: colors.ink, margin: '0 0 14px', lineHeight: 1.2 }}>
                   {t.hero.cardHome.title}
