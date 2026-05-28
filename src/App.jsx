@@ -282,22 +282,40 @@ const KONFIGURATOR_URL = 'https://appoloc-konfigurator.vercel.app';
 
 // === Bilder ===
 // Pfade in /public/images/ — du lädst diese Dateien einfach in den public/images/ Ordner hoch.
-// Bei den NEUEN Bildern habe ich daneben kommentiert, welche Datei (deine Uploads) gemeint ist.
 const IMG = {
-  // Bereits im bestehenden Repo:
-  hero:         '/images/hero.jpg',          // Hero-Bild im bestehenden Repo
-  product:      '/images/product.jpg',       // APPOLOC Board Detail (bestehend)
-  kitchen:      '/images/kitchen.jpg',       // Küche (bestehend)
-  office:       '/images/office.jpg',        // Homeoffice (bestehend)
-  smart:        '/images/smart.jpg',         // Smart-App Flur (bestehend)
-  portrait:     '/images/portrait.jpg',      // Lupos Portrait (bestehend)
-  // NEUE Bilder (musst du in public/images/ hochladen):
-  bizReception: '/images/biz-reception.jpg', // Empfehlung: Lumière Aesthetic Medicine (dunkler Empfang)
-  bizPraxis:    '/images/biz-praxis.jpg',    // Empfehlung: Smile Design Orthodontics (heller Praxis-Empfang)
-  bizWellness:  '/images/biz-wellness.jpg',  // Empfehlung: Pure Balance Wellness Spa (Travertin, Moos)
-  bizPatient:   '/images/biz-patient.jpg',   // Empfehlung: Aurum Dental Wartezimmer mit Smart-Display
-  bizHotel:     '/images/biz-hotel.jpg',     // Empfehlung: Hotel Suite 204 (Wayfinding Zimmertür)
-  bizWardrobe:  '/images/biz-wardrobe.jpg',  // Empfehlung: AW Guest Coats Garderobe
+  // === Bereits im bestehenden Repo (musst du behalten) ===
+  hero:         '/images/hero.jpg',          // Hero-Bild bestehend
+  product:      '/images/product.jpg',       // APPOLOC Board Detail bestehend
+  kitchen:      '/images/kitchen.jpg',       // Küche bestehend
+  office:       '/images/office.jpg',        // Homeoffice bestehend
+  smart:        '/images/smart.jpg',         // Smart-App Flur bestehend
+  portrait:     '/images/portrait.jpg',      // Lupos Portrait bestehend
+
+  // === NEUE BUSINESS-BILDER (Renderings aus deinen Uploads) ===
+  heroStand:    '/images/hero-stand.jpg',    // Hero Stand-Treppenhaus (vertikal, freistehend, Beton+Treppe)
+  bizHamilton:  '/images/biz-hamilton.jpg',  // Hamilton & Reeve (dunkel, drei Boards, Anwaltskanzlei)
+  bizReception: '/images/biz-reception.jpg', // Lumière Aesthetic Medicine (Bronze-Tresen, dunkel)
+  bizPraxis:    '/images/biz-praxis.jpg',    // Smile Design Orthodontics (hell, drei vertikale Boards)
+  bizWellness:  '/images/biz-wellness.jpg',  // Pure Balance Wellness Spa (Travertin, Moos)
+  bizNorthridge:'/images/biz-northridge.jpg',// Northridge Advisory (hell, drei horizontale Boards)
+  bizAurum:     '/images/biz-aurum.jpg',     // Aurum Dental Doppelempfang
+  bizRK:        '/images/biz-rk.jpg',        // Smile Design Praxis Wartebereich
+  bizHotel:     '/images/biz-hotel.jpg',     // Hotel Suite 204 (Wayfinding Zimmertür)
+  bizWardrobe:  '/images/biz-wardrobe.jpg',  // AW Guest Coats Garderobe (Material- und Haken-Module)
+
+  // === HOME / DETAIL ===
+  homeGrow:     '/images/home-grow.jpg',     // Wartezimmer mit Smart-Display "Grow" (Moos, Implantat-Video)
+  techKanzlei:  '/images/tech-kanzlei.jpg',  // Kanzlei Türschild Detail (Holz + Smart-Display "Mandantengespräch")
+  techWide:     '/images/tech-kanzlei-wide.jpg', // Kanzlei Wand aus Distanz (Gang)
+
+  // === MATERIAL-MODULE (echte APPOLOC-Module mit Edelstahlkante, je Material) ===
+  matLinoleum:  '/images/mat-linoleum.jpg',  // Lila/Flieder mattes Linoleum-Modul
+  matMoos:      '/images/mat-moos.jpg',      // Grünes Moos-Modul
+  matHolz:      '/images/mat-holz.jpg',      // Eichenholz-Modul
+  matLeder:     '/images/mat-leder.jpg',     // Cognac Leder-Modul
+  matTafel:     '/images/mat-tafel.jpg',     // Schwarzes genarbtes Tafel-Modul
+  matStein:     '/images/mat-stein.jpg',     // Dunkler Schiefer/Stein-Modul
+  matEdelstahl: '/images/mat-edelstahl.jpg', // Detail der gebürsteten Edelstahlkante
 };
 
 function Logo() {
@@ -408,46 +426,68 @@ export default function App() {
             <p style={{ ...pStyle, fontSize: 18, maxWidth: 680, margin: '0 auto' }}>{t.hero.sub}</p>
           </div>
 
-          {/* Zwei Auswahlkarten */}
+          {/* Zwei Auswahlkarten — mit Hintergrundbildern */}
           <div className="hero-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, maxWidth: 1080, margin: '0 auto' }}>
-            {/* Business card */}
+            {/* Business card mit Hamilton & Reeve im Hintergrund */}
             <a href="#business" style={{
-              display: 'block', textDecoration: 'none',
-              background: colors.ink, color: '#f5f0e8', padding: 40, borderRadius: 12,
+              position: 'relative', display: 'block', textDecoration: 'none',
+              background: colors.ink, color: '#f5f0e8', padding: 0, borderRadius: 12,
+              overflow: 'hidden', minHeight: 360,
               transition: 'transform 0.25s, box-shadow 0.25s',
             }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.18)'; }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.22)'; }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}
             >
-              <div style={{ ...tagStyle, color: colors.accent, marginBottom: 12 }}>{t.hero.cardBiz.tag}</div>
-              <h3 style={{ fontFamily: "'Montserrat'", fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 500, color: '#f5f0e8', margin: '0 0 14px', lineHeight: 1.2 }}>
-                {t.hero.cardBiz.title}
-              </h3>
-              <p style={{ fontFamily: "'Montserrat'", fontSize: 15, color: '#a09890', lineHeight: 1.65, margin: '0 0 24px', fontWeight: 300 }}>
-                {t.hero.cardBiz.text}
-              </p>
-              <span style={{ fontFamily: "'Montserrat'", fontSize: 14, fontWeight: 500, color: '#f5f0e8', letterSpacing: '0.02em' }}>
-                {t.hero.cardBiz.cta} →
-              </span>
+              <img src={IMG.bizHamilton} alt="" style={{
+                position: 'absolute', inset: 0, width: '100%', height: '100%',
+                objectFit: 'cover', opacity: 0.6,
+              }} />
+              <div style={{
+                position: 'absolute', inset: 0,
+                background: 'linear-gradient(180deg, rgba(26,23,20,0.55) 0%, rgba(26,23,20,0.92) 100%)',
+              }} />
+              <div style={{ position: 'relative', padding: 40 }}>
+                <div style={{ ...tagStyle, color: colors.accent, marginBottom: 12 }}>{t.hero.cardBiz.tag}</div>
+                <h3 style={{ fontFamily: "'Montserrat'", fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 500, color: '#f5f0e8', margin: '0 0 14px', lineHeight: 1.2 }}>
+                  {t.hero.cardBiz.title}
+                </h3>
+                <p style={{ fontFamily: "'Montserrat'", fontSize: 15, color: '#d4c4a8', lineHeight: 1.65, margin: '0 0 24px', fontWeight: 300 }}>
+                  {t.hero.cardBiz.text}
+                </p>
+                <span style={{ fontFamily: "'Montserrat'", fontSize: 14, fontWeight: 500, color: '#f5f0e8', letterSpacing: '0.02em' }}>
+                  {t.hero.cardBiz.cta} →
+                </span>
+              </div>
             </a>
 
-            {/* Home card */}
+            {/* Home card mit Northridge/Produkt im Hintergrund */}
             <a href="#home" style={{
-              display: 'block', textDecoration: 'none', color: 'inherit',
-              background: colors.paperWarm, padding: 40, borderRadius: 12,
+              position: 'relative', display: 'block', textDecoration: 'none', color: 'inherit',
+              background: colors.paperWarm, padding: 0, borderRadius: 12,
+              overflow: 'hidden', minHeight: 360,
               transition: 'transform 0.25s, box-shadow 0.25s',
             }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.10)'; }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.12)'; }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}
             >
-              <div style={tagStyle}>{t.hero.cardHome.tag}</div>
-              <h3 style={{ fontFamily: "'Montserrat'", fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 500, color: colors.ink, margin: '0 0 14px', lineHeight: 1.2 }}>
-                {t.hero.cardHome.title}
-              </h3>
-              <p style={{ ...pStyle, fontSize: 15, margin: '0 0 24px' }}>{t.hero.cardHome.text}</p>
-              <span style={{ fontFamily: "'Montserrat'", fontSize: 14, fontWeight: 500, color: colors.ink, letterSpacing: '0.02em' }}>
-                {t.hero.cardHome.cta} →
-              </span>
+              <img src={IMG.bizNorthridge} alt="" style={{
+                position: 'absolute', inset: 0, width: '100%', height: '100%',
+                objectFit: 'cover', opacity: 0.55,
+              }} />
+              <div style={{
+                position: 'absolute', inset: 0,
+                background: 'linear-gradient(180deg, rgba(240,236,230,0.4) 0%, rgba(240,236,230,0.94) 100%)',
+              }} />
+              <div style={{ position: 'relative', padding: 40 }}>
+                <div style={tagStyle}>{t.hero.cardHome.tag}</div>
+                <h3 style={{ fontFamily: "'Montserrat'", fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 500, color: colors.ink, margin: '0 0 14px', lineHeight: 1.2 }}>
+                  {t.hero.cardHome.title}
+                </h3>
+                <p style={{ ...pStyle, fontSize: 15, margin: '0 0 24px' }}>{t.hero.cardHome.text}</p>
+                <span style={{ fontFamily: "'Montserrat'", fontSize: 14, fontWeight: 500, color: colors.ink, letterSpacing: '0.02em' }}>
+                  {t.hero.cardHome.cta} →
+                </span>
+              </div>
             </a>
           </div>
 
@@ -551,15 +591,23 @@ export default function App() {
           <h2 style={h2Style}>{t.bizSets.title}</h2>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
-          {t.bizSets.sets.map((s, i) => (
-            <div key={i} style={{ background: colors.paper, border: `1px solid ${colors.line}`, borderRadius: 12, padding: 32, display: 'flex', flexDirection: 'column', gap: 16 }}>
-              <h3 style={{ fontFamily: "'Montserrat'", fontSize: 22, fontWeight: 500, color: colors.ink, margin: 0 }}>{s.name}</h3>
-              <p style={{ ...pStyle, margin: 0, fontStyle: 'italic' }}>{s.for}</p>
-              <p style={{ fontFamily: "'Montserrat'", fontSize: 14, color: colors.inkSoft, lineHeight: 1.65, margin: 0, fontWeight: 300 }}>{s.items}</p>
-              <div style={{ fontFamily: "'Montserrat'", fontSize: 12, color: colors.mute, marginTop: 'auto' }}>{s.target}</div>
-              <a href="#kontakt" style={{ ...btnStyle, alignSelf: 'flex-start', marginTop: 8 }}>{s.cta} →</a>
-            </div>
-          ))}
+          {t.bizSets.sets.map((s, i) => {
+            const setImages = [IMG.bizHotel, IMG.bizAurum, IMG.bizWellness]; // Welcome / Patient Flow / Wellness
+            return (
+              <div key={i} style={{ background: colors.paper, border: `1px solid ${colors.line}`, borderRadius: 12, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ aspectRatio: '5/3', overflow: 'hidden', background: colors.paperWarm }}>
+                  <img src={setImages[i]} alt={s.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <div style={{ padding: 28, display: 'flex', flexDirection: 'column', gap: 14, flex: 1 }}>
+                  <h3 style={{ fontFamily: "'Montserrat'", fontSize: 22, fontWeight: 500, color: colors.ink, margin: 0 }}>{s.name}</h3>
+                  <p style={{ ...pStyle, margin: 0, fontStyle: 'italic' }}>{s.for}</p>
+                  <p style={{ fontFamily: "'Montserrat'", fontSize: 14, color: colors.inkSoft, lineHeight: 1.65, margin: 0, fontWeight: 300 }}>{s.items}</p>
+                  <div style={{ fontFamily: "'Montserrat'", fontSize: 12, color: colors.mute, marginTop: 'auto' }}>{s.target}</div>
+                  <a href="#kontakt" style={{ ...btnStyle, alignSelf: 'flex-start', marginTop: 8 }}>{s.cta} →</a>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -572,16 +620,24 @@ export default function App() {
             <h2 style={{ ...h2Style, color: '#f5f0e8' }}>{t.mat.title}</h2>
             <p style={{ ...pStyle, color: '#a09890' }}>{t.mat.p}</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 1, background: 'rgba(255,255,255,0.08)' }}>
-            {t.mat.items.map((m, i) => (
-              <div key={i} style={{ background: colors.ink, padding: '28px 22px' }}>
-                <div style={{ width: 28, height: 28, borderRadius: '50%', background: colors.accent, marginBottom: 16, opacity: 0.4 + (i * 0.08) }} />
-                <h3 style={{ fontFamily: "'Montserrat'", fontSize: 17, fontWeight: 500, color: '#f5f0e8', margin: '0 0 6px' }}>{m.name}</h3>
-                <p style={{ fontFamily: "'Montserrat'", fontSize: 13, color: '#a09890', margin: 0, fontWeight: 300 }}>{m.desc}</p>
-              </div>
-            ))}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
+            {t.mat.items.map((m, i) => {
+              const matImages = [
+                IMG.matLinoleum, IMG.matMoos, IMG.matHolz,
+                IMG.matLeder, IMG.matTafel, IMG.matStein, IMG.matEdelstahl,
+              ];
+              return (
+                <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ aspectRatio: '1/1', borderRadius: 12, overflow: 'hidden', marginBottom: 16, background: '#0f0d0b' }}>
+                    <img src={matImages[i]} alt={m.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                  <h3 style={{ fontFamily: "'Montserrat'", fontSize: 17, fontWeight: 500, color: '#f5f0e8', margin: '0 0 6px' }}>{m.name}</h3>
+                  <p style={{ fontFamily: "'Montserrat'", fontSize: 13, color: '#a09890', margin: 0, fontWeight: 300 }}>{m.desc}</p>
+                </div>
+              );
+            })}
           </div>
-          <p style={{ ...claimStyle, color: colors.accent, borderLeftColor: colors.accent, marginTop: 48 }}>{t.mat.claim}</p>
+          <p style={{ ...claimStyle, color: colors.accent, borderLeftColor: colors.accent, marginTop: 56 }}>{t.mat.claim}</p>
         </div>
       </section>
 
@@ -612,9 +668,12 @@ export default function App() {
       {/* HOME WHAT */}
       <section style={{ background: colors.paperWarm }}>
         <div style={sectionStyle}>
-          <div style={{ maxWidth: 720, marginBottom: 56 }}>
-            <div style={tagStyle}>{t.homeWhat.tag}</div>
-            <h2 style={h2Style}>{t.homeWhat.title}</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 56, marginBottom: 56, alignItems: 'center' }}>
+            <div>
+              <div style={tagStyle}>{t.homeWhat.tag}</div>
+              <h2 style={h2Style}>{t.homeWhat.title}</h2>
+            </div>
+            <img src={IMG.homeGrow} alt="APPOLOC Board mit Moos, Smart-Display und App im Wohnraum" style={{ width: '100%', borderRadius: 8 }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20 }}>
             {t.homeWhat.groups.map((g, i) => (
@@ -674,7 +733,7 @@ export default function App() {
             </p>
             <a href="#kontakt" style={{ ...btnStyle, marginTop: 28 }}>{t.sample.cta} →</a>
           </div>
-          <img src={IMG.bizWardrobe} alt="APPOLOC — Materialien und Apps sichtbar" style={{ width: '100%', borderRadius: 8 }} />
+          <img src={IMG.bizWellness} alt="APPOLOC — Moos, Stein, Linoleum als Materialauswahl" style={{ width: '100%', borderRadius: 8 }} />
         </div>
       </section>
 
@@ -694,7 +753,10 @@ export default function App() {
                 ))}
               </ul>
             </div>
-            <img src={IMG.portrait} alt="Lupo — Tischlermeister" style={{ width: '100%', maxWidth: 460, borderRadius: 8, justifySelf: 'center' }} />
+            <div style={{ display: 'grid', gap: 16 }}>
+              <img src={IMG.techKanzlei} alt="APPOLOC Detail — Holz, Smart-Display, Edelstahlkante" style={{ width: '100%', borderRadius: 8 }} />
+              <img src={IMG.bizWardrobe} alt="APPOLOC mit Material- und Funktions-Apps" style={{ width: '100%', borderRadius: 8 }} />
+            </div>
           </div>
         </div>
       </section>
