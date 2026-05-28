@@ -298,6 +298,7 @@ const IMG = {
   heroHome:     '/images/hero-home.jpg',    // Hero-Karte Home: Küche mit Kräuter-Apps, Uhr, Moos
   heroStand:    '/images/hero-stand.jpg',    // Hero Stand-Treppenhaus (vertikal, freistehend, Beton+Treppe)
   bizHamilton:  '/images/biz-hamilton.jpg',  // Hamilton & Reeve (dunkel, drei Boards, Anwaltskanzlei)
+  bizWhy:       '/images/biz-why.jpg',       // Business-Warum-Sektion: Smile Design Orthodontics Empfang
   bizReception: '/images/biz-reception.jpg', // Lumière Aesthetic Medicine (Bronze-Tresen, dunkel)
   bizPraxis:    '/images/biz-praxis.jpg',    // Smile Design Orthodontics (hell, drei vertikale Boards)
   bizWellness:  '/images/biz-wellness.jpg',  // Pure Balance Wellness Spa (Travertin, Moos)
@@ -500,7 +501,7 @@ export default function App() {
       {/* BIZ WHY */}
       <section style={{ ...sectionStyle, paddingTop: 100 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 64, alignItems: 'center' }}>
-          <img src={IMG.bizReception} alt="Empfang einer Privatpraxis mit APPOLOC Board" style={{ width: '100%', borderRadius: 8 }} />
+          <img src={IMG.bizWhy} alt="Empfang einer Praxis mit APPOLOC Board" style={{ width: '100%', borderRadius: 8 }} />
           <div>
             <div style={tagStyle}>{t.bizWhy.tag}</div>
             <h2 style={h2Style}>{t.bizWhy.title}</h2>
