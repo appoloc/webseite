@@ -310,6 +310,7 @@ const IMG = {
 
   // === HOME / DETAIL ===
   homeGrow:     '/images/home-grow.jpg',     // Wartezimmer mit Smart-Display "Grow" (Moos, Implantat-Video)
+  homeWas:      '/images/home-was.jpg',      // Home-Was: Flur mit Garderobe (Schlüssel, Tasche, Spiegel)
   techKanzlei:  '/images/tech-kanzlei.jpg',  // Kanzlei Türschild Detail (Holz + Smart-Display "Mandantengespräch")
   techWide:     '/images/tech-kanzlei-wide.jpg', // Kanzlei Wand aus Distanz (Gang)
 
@@ -645,7 +646,7 @@ export default function App() {
               <div style={tagStyle}>{t.homeWhat.tag}</div>
               <h2 style={h2Style}>{t.homeWhat.title}</h2>
             </div>
-            <img src={IMG.homeGrow} alt="APPOLOC Board mit Moos, Smart-Display und App im Wohnraum" style={{ width: '100%', borderRadius: 8 }} />
+            <img src={IMG.homeWas} alt="APPOLOC im Flur — Schlüssel, Tasche, Spiegel und Apps" style={{ width: '100%', borderRadius: 8 }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20 }}>
             {t.homeWhat.groups.map((g, i) => (
